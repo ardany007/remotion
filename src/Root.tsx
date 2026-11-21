@@ -3,12 +3,24 @@ import { Composition } from "remotion";
 import { MyComposition } from "./Composition";
 import { FinanceShowcase } from "./compositions/FinanceShowcase";
 import { LossLeaderVideo } from "./videos/loss-leader/LossLeaderVideo";
+import { LossLeaderShortVideo } from "./videos/loss-leader/LossLeaderShortVideo";
 import { lossLeaderTiming } from "./data/lossLeaderTiming";
+import { lossLeaderShortTiming } from "./data/lossLeaderShortTiming";
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
-      {/* Video YouTube Finansial Lengkap: Strategi Loss Leader (111.7 detik / 3350 frames) */}
+      {/* Video YouTube Shorts (Vertikal 9:16): Loss Leader (39 detik / 1170 frames) */}
+      <Composition
+        id="LossLeaderShort"
+        component={LossLeaderShortVideo}
+        durationInFrames={lossLeaderShortTiming.totalFrames}
+        fps={lossLeaderShortTiming.fps}
+        width={1080}
+        height={1920}
+      />
+
+      {/* Video YouTube Finansial Lengkap (Horizontal 16:9): Strategi Loss Leader */}
       <Composition
         id="LossLeader"
         component={LossLeaderVideo}

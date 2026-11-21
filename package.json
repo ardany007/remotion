@@ -28,7 +28,9 @@
     "upgrade": "remotion upgrade",
     "lint": "eslint src && tsc",
     "vo:preview": "node scripts/generate_audio.mjs --edge",
-    "vo:final": "node scripts/generate_audio.mjs --elevenlabs"
+    "vo:final": "node scripts/generate_audio.mjs --elevenlabs",
+    "vo:short": "node scripts/generate_short_audio.mjs",
+    "vo:short:final": "node scripts/generate_short_audio.mjs --elevenlabs"
   },
   "allowScripts": {
     "esbuild": false

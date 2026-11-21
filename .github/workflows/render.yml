@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       composition:
-        description: 'ID Komposisi yang ingin dirender'
+        description: 'ID Komposisi yang ingin dirender (LossLeaderShort / LossLeader / FinanceShowcase)'
         required: true
-        default: 'LossLeader'
+        default: 'LossLeaderShort'
 
 jobs:
   render:
@@ -31,7 +31,11 @@ jobs:
           ELEVENLABS_VOICE_ID: ${{ secrets.ELEVENLABS_VOICE_ID }}
         run: |
           if [ -n "$ELEVENLABS_API_KEY" ]; then
-            npm run vo:final
+            if [ "${{ github.event.inputs.composition }}" = "LossLeaderShort" ]; then
+              npm run vo:short:final
+            else
+              npm run vo:final
+            fi
           else
             echo "Menggunakan audio bawaan"
           fi
