@@ -5,8 +5,10 @@ import { FinanceShowcase } from "./compositions/FinanceShowcase";
 import { LossLeaderVideo } from "./videos/loss-leader/LossLeaderVideo";
 import { LossLeaderShortVideo } from "./videos/loss-leader/LossLeaderShortVideo";
 import { CinematicPianoVideo } from "./videos/music-visualizer/CinematicPianoVideo";
+import { IceMeltVideo } from "./videos/ice-melt/IceMeltVideo";
 import { lossLeaderTiming } from "./data/lossLeaderTiming";
 import { lossLeaderShortTiming } from "./data/lossLeaderShortTiming";
+import { iceMeltTiming } from "./data/iceMeltTiming";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -15,14 +17,14 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="CinematicPiano"
         component={CinematicPianoVideo}
-        durationInFrames={1800} // 60 detik (bisa diubah sesuai durasi lagu Suno)
+        durationInFrames={13890} // 60 detik (bisa diubah sesuai durasi lagu Suno)
         fps={30}
         width={1920}
         height={1080}
         defaultProps={{
-          title: "MIDNIGHT CONCERTO",
-          artist: "Ardany Music",
-          audioFileName: "music/loss-leader-bgm.mp3",
+          title: "ORBITING MIDNIGHT",
+          artist: "Midnight Music",
+          audioFileName: "music/orbiting-midnight.mp3",
           accentColor: "#38bdf8",
         }}
       />
@@ -43,6 +45,16 @@ export const RemotionRoot: React.FC = () => {
         component={LossLeaderVideo}
         durationInFrames={lossLeaderTiming.totalFrames}
         fps={lossLeaderTiming.fps}
+        width={1920}
+        height={1080}
+      />
+
+      {/* Video Edukasi Sains Populer (Horizontal 16:9): Bumi Tanpa Es */}
+      <Composition
+        id="IceMelt"
+        component={IceMeltVideo}
+        durationInFrames={iceMeltTiming.totalFrames}
+        fps={iceMeltTiming.fps}
         width={1920}
         height={1080}
       />

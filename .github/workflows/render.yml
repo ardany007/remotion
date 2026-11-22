@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       composition:
-        description: 'ID Komposisi yang ingin dirender (LossLeaderShort / LossLeader / FinanceShowcase)'
+        description: 'ID Komposisi yang ingin dirender (LossLeaderShort / LossLeader / FinanceShowcase / IceMelt)'
         required: true
-        default: 'LossLeaderShort'
+        default: 'IceMelt'
 
 jobs:
   render:
@@ -33,6 +33,8 @@ jobs:
           if [ -n "$ELEVENLABS_API_KEY" ]; then
             if [ "${{ github.event.inputs.composition }}" = "LossLeaderShort" ]; then
               npm run vo:short:final
+            elif [ "${{ github.event.inputs.composition }}" = "IceMelt" ]; then
+              npm run vo:ice-melt:final
             else
               npm run vo:final
             fi

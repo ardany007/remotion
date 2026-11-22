@@ -1,0 +1,25 @@
+export const iceMeltTheme = {
+  colors: {
+    bgDark: "#050914",
+    bgCard: "rgba(11, 20, 38, 0.88)",
+    borderCard: "rgba(56, 189, 248, 0.28)",
+    primaryCyan: "#38bdf8",
+    cyanGlow: "rgba(56, 189, 248, 0.45)",
+    iceWhite: "#f0f9ff",
+    waterBlue: "#0284c7",
+    deepOcean: "#0369a1",
+    warningRed: "#ef4444",
+    warningRedGlow: "rgba(239, 68, 68, 0.5)",
+    magmaOrange: "#f97316",
+    magmaGlow: "rgba(249, 115, 22, 0.55)",
+    methaneGreen: "#10b981",
+    methaneGlow: "rgba(16, 185, 129, 0.5)",
+    textPrimary: "#f8fafc",
+    textSecondary: "#94a3b8",
+    textMuted: "#64748b",
+  },
+  typography: {
+    titleFont: "system-ui, -apple-system, sans-serif",
+    monoFont: "monospace",
+  },
+};
